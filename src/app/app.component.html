@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="app.component.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+        <div class="header">
+            <div class="space"></div>
+            <div class="container">
+                <div class="image" (click)="loadJsonData()">
+                    <img src="assets/logoipm.png" alt="Logo del colegio" class="logo">
+                </div>
+                <div class="spacer"></div>
+                <div class="expo">
+                    <h1 class="expo-text">Expo Modelo 2024</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <div class="arrow" (click)="scrollToolbar('left')">❮</div>
+            <div class="toolbar-section" *ngFor="let juego of displayedJuegos" (click)="onJuegoClick(juego.Juego)">
+              <span>{{ juego.Juego }}</span>
+            </div>
+            <div class="arrow" (click)="scrollToolbar('right')">❯</div>
+          </div>
+          
+
+        <div class="rectangles-container">
+            <div *ngFor="let person of jsonData" class="rectangle">
+                <div class="person-info">
+                    <div class="person">
+                        <img [src]="person.DireccionFoto" alt="Foto de {{ person.Nombre }}">
+                    </div>
+                    <div class="info">
+                        <span>{{ person.Nombre }} - Puntuación: {{ person.Puntaje }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <router-outlet></router-outlet>
+
+    </body>
+</html>

@@ -1,0 +1,39 @@
+.rectangles-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.rectangle {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.person-info {
+    display: flex;
+}
+
+.person {
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.person img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    transform: translate(0%, 10%);
+}
+
+.person-info span {
+    white-space: nowrap;
+}
+
+.info {
+    padding: 10px;
+    text-align: left;
+    width: 50%;
+    transform: translate(5%, 34%);
+}
